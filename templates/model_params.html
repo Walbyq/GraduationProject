@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Настройка модели</title>
+</head>
+<body>
+<h1>Настройка модели</h1>
+<form method="POST">
+    <label for="epochs">Количество эпох:</label>
+    <input type="number" id="epochs" name="epochs" value="20" min="5" max="50" step="5"><br>
+
+    <label for="batch_size">Размер пакета:
+        <select id="batch_size" name="batch_size">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="8">8</option>
+            <option value="16">16</option>
+            <option value="32">32</option>
+            <option value="64" selected>64</option>
+            <option value="128">128</option>
+        </select>
+    </label><br>
+
+    <button type="submit" id="button">Отправить</button>
+</form>
+</body>
+</html>

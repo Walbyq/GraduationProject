@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Разметка изображений</title>
+</head>
+<body>
+<h1>Результаты поиска по запросу: {{ query }}</h1>
+<p>Выберите непригодные изображения:</p>
+<form method="POST">
+    {% for img in imgs %}
+        <label for="{{ img.id }}"><img src="{{ img.src }}" alt=" " width="200" height="200"></label>
+        <input type="checkbox" id="{{ img.id }}" name="{{ img.id }}">
+    {% endfor %}
+
+    <p>Пригодных изображений: {{ len_accept }} из {{ len_class }}</p>
+    <p>Непригодных изображений: {{ len_unaccept }} из {{ len_class }}</p>
+
+    <button type="submit" name="page" value="{{ page }}">Далее</button>
+</form>
+</body>
+</html>
